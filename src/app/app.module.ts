@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +9,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

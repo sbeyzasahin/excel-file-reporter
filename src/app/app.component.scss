@@ -1,0 +1,19 @@
+.main-content {
+
+    .file-upload {
+        position: relative;
+        
+        .select-file-button {
+            cursor: default;
+        }
+
+        input[type=file] {
+            position: absolute;
+            left:0;
+            width: 130px;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+        }
+    }
+}
