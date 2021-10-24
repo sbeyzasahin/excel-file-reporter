@@ -3,13 +3,17 @@
     <button class="select-file-button" mat-button color="primary">Dosya Seç
       <mat-icon>file_upload</mat-icon>
     </button>
-    <input type="file">
+    <input type="file" (change)="onSelectFile($event)">
   </div>
   <div class="select-answer-content">
-    <mat-list>
-      <mat-list-item> Pepper </mat-list-item>
-      <mat-list-item> Salt </mat-list-item>
-      <mat-list-item> Paprika </mat-list-item>
-     </mat-list>
+    <mat-select [(ngModel)]="selectedAnswer" class="select-answers">
+      <mat-option *ngFor="let answer of answerList" [value]="answer">
+        {{answer}}
+      </mat-option>
+      <mat-option value="-">
+        Grafik İçin Cevap Seçiniz
+      </mat-option>
+    </mat-select>
   </div>
+  <div id="graph-1"></div>
 </div>
