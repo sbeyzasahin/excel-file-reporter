@@ -1,19 +1,30 @@
 <div class="main-content">
+  <p class="title">Analiz Oluşturma Paneli</p>
   <div class="file-upload">
     <button class="select-file-button" mat-button color="primary">Dosya Seç
       <mat-icon>file_upload</mat-icon>
     </button>
     <input type="file" (change)="onSelectFile($event)">
+    <span *ngIf="fileName" class="file-name">{{fileName}} Dosyası Başarıyla Yüklendi <mat-icon>done</mat-icon></span>
   </div>
   <div class="select-answer-content">
-    <mat-select [(ngModel)]="selectedAnswer" class="select-answers">
-      <mat-option *ngFor="let answer of answerList" [value]="answer">
-        {{answer}}
-      </mat-option>
-      <mat-option value="-">
-        Grafik İçin Cevap Seçiniz
+    <mat-select [(ngModel)]="selectedAnswer.value" class="select-answers" (selectionChange)="createQuestions()">
+      <mat-option *ngFor="let answer of answerList" [value]="answer.value">
+        {{answer.name}}
       </mat-option>
     </mat-select>
+  </div>
+  <div class="select-answer-content">
+    <ng-container *ngIf="questionList.length > 0">
+      <mat-select [(ngModel)]="selectedQuestion" class="select-questions" (selectionChange)="onSelectedQuestion()">
+        <mat-option *ngFor="let question of questionList" [value]="question">
+          {{question}}
+        </mat-option>
+        <mat-option [value]="''">
+          Soru Seçiniz...
+        </mat-option>
+      </mat-select>
+    </ng-container>
   </div>
   <div id="graph-1"></div>
 </div>

@@ -7,12 +7,21 @@
     align-items: center;
     justify-content: center;
 
+    .title {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 22px;
+    }
+
     .file-upload {
         position: relative;
         margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .select-file-button {
             cursor: default;
             border: 2px solid #432675;
+            max-width: 130px;
         }
 
         input[type=file] {
@@ -22,6 +31,11 @@
             font-size: 24px;
             cursor: pointer;
             opacity: 0;
+        }
+
+        .file-name {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 21px;
         }
     }
 }
@@ -35,6 +49,14 @@
     width: 200px;
     border-radius: 10px;
     padding: 10px;
+    margin: 8px;
+}
+.select-questions {
+    background-color: #673ab7;
+    min-width: 600px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 8px;
 }
 
 ng-deep .mat-select-value {
@@ -43,4 +65,10 @@ ng-deep .mat-select-value {
 
 .mat-select-arrow {
     color: #fff !important;
+}
+
+#graph-1 {
+    box-shadow: 8px 16px 21px #9c9c9c;
+    border-radius: 10px;
+    margin-top: 12px;
 }
