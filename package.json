@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gp-pages": "ng build --base-href /excel-file-reporter/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ghpages": "ng build --prod --base-href /excel-file-to-report/",
